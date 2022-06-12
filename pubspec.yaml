@@ -34,18 +34,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   # For NoSQL Database
-  hive: ^2.1.0
+  hive: ^2.2.2
   # Extension for hive
   hive_flutter: ^1.1.0
   # For OS-specific directory paths
-  path_provider: ^2.0.10
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # For hive
-  hive_generator: ^1.1.2
-  build_runner: ^2.1.7
+  hive_generator: ^1.1.3
+  build_runner: ^2.1.11
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
