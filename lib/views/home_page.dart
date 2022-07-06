@@ -79,66 +79,67 @@ class _HomePageState extends State<HomePage> {
     }
 
     showModalBottomSheet(
-        context: ctx,
-        elevation: 5,
-        isScrollControlled: true,
-        builder: (_) => Container(
-              padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(ctx).viewInsets.bottom,
-                  top: 15,
-                  left: 15,
-                  right: 15),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  TextField(
-                    controller: _nameController,
-                    decoration: const InputDecoration(hintText: 'Name'),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  TextField(
-                    controller: _quantityController,
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(hintText: 'Quantity'),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      // Save new item
-                      if (itemKey == null) {
-                        _createItem({
-                          "name": _nameController.text,
-                          "quantity": _quantityController.text
-                        });
-                      }
+      context: ctx,
+      elevation: 5,
+      isScrollControlled: true,
+      builder: (_) => Container(
+        padding: EdgeInsets.only(
+            bottom: MediaQuery.of(ctx).viewInsets.bottom,
+            top: 15,
+            left: 15,
+            right: 15),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            TextField(
+              controller: _nameController,
+              decoration: const InputDecoration(hintText: 'Name'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: _quantityController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(hintText: 'Quantity'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                // Save new item
+                if (itemKey == null) {
+                  _createItem({
+                    "name": _nameController.text,
+                    "quantity": _quantityController.text
+                  });
+                }
 
-                      // update an existing item
-                      if (itemKey != null) {
-                        _updateItem(itemKey, {
-                          'name': _nameController.text.trim(),
-                          'quantity': _quantityController.text.trim()
-                        });
-                      }
+                // update an existing item
+                if (itemKey != null) {
+                  _updateItem(itemKey, {
+                    'name': _nameController.text.trim(),
+                    'quantity': _quantityController.text.trim()
+                  });
+                }
 
-                      // Clear the text fields
-                      _nameController.text = '';
-                      _quantityController.text = '';
+                // Clear the text fields
+                _nameController.text = '';
+                _quantityController.text = '';
 
-                      Navigator.of(context).pop(); // Close the bottom sheet
-                    },
-                    child: Text(itemKey == null ? 'Create New' : 'Update'),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  )
-                ],
-              ),
-            ));
+                Navigator.of(context).pop(); // Close the bottom sheet
+              },
+              child: Text(itemKey == null ? 'Create New' : 'Update'),
+            ),
+            const SizedBox(
+              height: 15,
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   @override
