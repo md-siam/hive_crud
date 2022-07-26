@@ -5,7 +5,7 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
 
   // Retrieve a single item from the database by using its key
   // Our app won't use this function but I put it here for your reference
+  // ignore: unused_element
   Map<String, dynamic> _readItem(int key) {
     final item = _shoppingBox.get(key);
     return item;
@@ -57,6 +58,7 @@ class _HomePageState extends State<HomePage> {
     _refreshItems(); // update the UI
 
     // Display a snackbar
+    // ignore: use_build_context_synchronously
     ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('An item has been deleted')));
   }
