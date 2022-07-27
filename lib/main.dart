@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hive CRUD Operation',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
+      theme: ThemeData(primarySwatch: Colors.brown),
       home: const HomePage(),
     );
   }

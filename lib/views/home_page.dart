@@ -147,7 +147,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[100],
       appBar: AppBar(
         title: const Text(
           'Hive CRUD',

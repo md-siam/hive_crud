@@ -8,6 +8,23 @@
 
 <img align="right" src="screenshots/appicons/playstore.png" height="190"></img>
 
+Introduction to Hive: This repo will teach you how to use [hive](https://pub.dev/packages/hive) package for storing data locally in your device. Hive is a lightweight and blazing fast key-value database written in pure Dart.
+
+To use hive, add the following packages to your [pubspec.yaml](pubspec.yaml) file:
+
+```yaml
+dependencies:
+  # For NoSQL Database
+  hive: ^2.2.3
+  # Extension for hive
+  hive_flutter: ^1.1.0
+
+dev_dependencies:
+  # For hive
+  hive_generator: ^1.1.3
+  build_runner: ^2.2.0
+```
+
 ## App Demo
 
 <p align="center"><img src="screenshots/gif/demo.gif"></p>
@@ -17,6 +34,9 @@
 Create: [home_page.dart](lib/views/home_page.dart)
 
 ```dart
+  List<Map<String, dynamic>> _items = [];
+  final _shoppingBox = Hive.box('shopping_box');
+
   // Create new item
   Future<void> _createItem(Map<String, dynamic> newItem) async {
     await _shoppingBox.add(newItem);
