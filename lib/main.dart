@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hive CRUD',
+      title: 'Hive CRUD Operation',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.grey),
+      theme: ThemeData(primarySwatch: Colors.lightBlue),
       home: const HomePage(),
     );
   }

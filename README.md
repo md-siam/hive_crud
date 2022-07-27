@@ -8,7 +8,7 @@
 
 <img align="right" src="screenshots/appicons/playstore.png" height="190"></img>
 
-[KindaCode]()
+
 
 ## Getting Started
 
